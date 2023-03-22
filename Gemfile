@@ -76,3 +76,5 @@ gem "devise", "~> 4.9"
 gem "cssbundling-rails", "~> 1.1"
 
 gem "simple_form", "~> 5.2"
+
+gem "jsbundling-rails", "~> 1.1"
