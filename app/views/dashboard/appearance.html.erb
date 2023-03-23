@@ -1,16 +1,44 @@
 <div class="container">
   <h1 class="text-center">Appearance Page</h1>
   <%= simple_form_for(current_user, url: registration_path(current_user), html: { method: :put }, data: { turbo: false }) do |f| %>
-    <div class="row mt-5 align-items-center">
-      <div class="col-4 text-center">
-        <%= image_tag(current_user.avatar, class: "avatar-image") if current_user.avatar.attached? %>
+  <div class="row">
+    <div class="col-8">
+      <div class="row mt-5 align-items-center">
+        <div class="col-6 text-center">
+          <%= image_tag(current_user.avatar, class: "avatar-image") if current_user.avatar.attached? %>
+        </div>
+        <div class="col-6">
+          <%= f.input :avatar, required: false, label: false %>
+        </div>
       </div>
-      <div class="col-4">
-        <%= f.input :avatar, required: false, label: false %>
+
+      <div class="row mt-4 text-center">
+        <div class="col-6 no-padding-col">
+          <%= f.input :full_name, placeholder: "Your full name...", label: false, class: "form-control", required: false %>
+        </div>
+        <div class="col-6 no-padding-col text-right">
+          <div class="input-group justify-content-center">
+            <span class="input-group-text mb-3">@</span>
+            <%= f.input :username, placeholder: "Your username...", label: false, required: true, class: "form-control" %>
+          </div>
+        </div>
       </div>
-      <div class="col-4 mb-3">
+
+      <div class="row mt-5">
+        <div class="col no-padding-col">
+          <div class="input-group row">
+              <%= f.input :body, placeholder: "About you...", label: false, class: "form-control", required: false %>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-2 text-center">
         <%= f.submit "Update Avatar" %>
       </div>
     </div>
+
+    <div class="col-4">
+    </div>
+  </div>
   <% end %>
 </div>
