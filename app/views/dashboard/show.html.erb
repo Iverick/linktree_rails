@@ -7,10 +7,10 @@
           <%= image_tag(@user.avatar, class: "avatar-image") if @user.avatar.present? %>
         </div>
         <div class="d-flex justify-content-center mt-4">
-          <h2><%= @user.email.capitalize %></h2>
+          <h2><%= @user.full_name %></h2>
         </div>
         <div class="d-flex justify-content-center">
-          <p>Description goes here</p>
+          <p><%= @user.body %></p>
         </div>
       </div>
     </div>

@@ -9,6 +9,10 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
+      <div class="input-group mb-3">
+        <span class="input-group-text mb-3">@</span>
+        <%= f.input :username, placeholder: "Your username...", label: false, required: true, class: "form-control" %>
+      </div>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
