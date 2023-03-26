@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
-  before_action :authenticate_user!, expect: [:show]
+  before_action :authenticate_user!, only: %i[index appearance]
   before_action :set_user, only: [:show]
-  before_action :render_navbar
+  before_action :render_navbar, except: [:show]
 
   def index
   end
@@ -11,6 +11,8 @@ class DashboardController < ApplicationController
 
   def show
     redirect_to dashboard_path if @user.nil?
+
+    @links = @user.links.where.not(url: '', title: '')
   end
 
   private

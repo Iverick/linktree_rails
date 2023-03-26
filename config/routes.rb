@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations',
   }
+  patch 'links/:id' => 'links#update', as: :links
+
   get 'dashboard', to: 'dashboard#index'
   get 'appearance', to: 'dashboard#appearance'
   root 'dashboard#index'
