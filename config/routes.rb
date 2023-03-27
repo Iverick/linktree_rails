@@ -3,15 +3,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations',
   }
-  patch 'links/:id' => 'links#update', as: :links
+  post 'links', to: 'links#create', as: :create_link
+  patch 'links/:id' => 'links#update', as: :update_link
 
   get 'dashboard', to: 'dashboard#index'
   get 'appearance', to: 'dashboard#appearance'
   root 'dashboard#index'
 
   get ':id', to: 'dashboard#show', as: :user
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
