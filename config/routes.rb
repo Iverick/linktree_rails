@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
   post 'links', to: 'links#create', as: :create_link
   patch 'links/:id' => 'links#update', as: :update_link
+  delete 'links/:id', to: 'links#destroy', as: :destroy_link
 
   get 'dashboard', to: 'dashboard#index'
   get 'appearance', to: 'dashboard#appearance'
